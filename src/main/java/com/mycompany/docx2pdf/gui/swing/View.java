@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -104,9 +105,12 @@ public class View extends JFrame {
             String fontsFolder = tfFonts.getText();
 
             Converter c = new Converter(in, out, fontsFolder);
+
+            JOptionPane.showMessageDialog(this,
+                    "Your document has been converted successfully!");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
 
+    }
 }
